@@ -6,7 +6,9 @@ class AddRoomForm extends Component {
     this.state = {};
   }
   render() {
-    return <div className="add-room-form">Add Room</div>;
+    return <div className="add-room-form grid__elem">
+        Add Room <i class="fas fa-plus" />
+      </div>;
   }
 }
 

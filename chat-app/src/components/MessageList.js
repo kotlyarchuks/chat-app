@@ -8,7 +8,7 @@ class MessageList extends Component {
   }
   render() {
     return (
-      <div className="message-list">
+      <div className="message-list grid__elem">
         <h4>Message List</h4>
         <ul>
           <li><Message /></li>

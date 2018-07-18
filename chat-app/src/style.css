@@ -1,8 +1,15 @@
+:root {
+  --main-color: #C5EFF7;
+  --accent-color: rgb(245, 255, 255);
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: content-box;
   height: 100%;
+
+  font-family: Lato, sans-serif;
 }
 
 #root {
@@ -23,22 +30,26 @@ body {
   "n f f f f f";
 }
 
-.rooms-list {
-  grid-area: r;
-  border: 1px solid red;
+.grid__elem {
+  padding: 15px;
 }
 
 .rooms-list {
+  grid-area: r;
+  background: var(--main-color);
+}
+
+.message-list {
   grid-area: m;
-  border: 1px solid blue;
 }
 
 .add-room-form {
   grid-area: n;
-  border: 1px solid green;
+  text-align: center;
+  background: var(--accent-color);
 }
 
 .add-message-form {
   grid-area: f;
-  border: 1px solid yellow;
+  border: .5px solid lightgrey;
 }

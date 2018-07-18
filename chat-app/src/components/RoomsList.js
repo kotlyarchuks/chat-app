@@ -6,7 +6,7 @@ class RoomsList extends Component {
     this.state = {};
   }
   render() {
-    return <div>Rooms list</div>;
+    return <div className="rooms-list">Rooms list</div>;
   }
 }
 

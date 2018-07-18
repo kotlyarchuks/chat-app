@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  height: 100%;
+}
+
+#root {
+  height: 100vh;
+}
+
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 60px;
+  grid-template-areas: 
+  "r m m m m m"
+  "r m m m m m"
+  "r m m m m m"
+  "r m m m m m"
+  "r m m m m m"
+  "n f f f f f";
+}
+
+.rooms-list {
+  grid-area: r;
+  border: 1px solid red;
+}
+
+.rooms-list {
+  grid-area: m;
+  border: 1px solid blue;
+}
+
+.add-room-form {
+  grid-area: n;
+  border: 1px solid green;
+}
+
+.add-message-form {
+  grid-area: f;
+  border: 1px solid yellow;
+}

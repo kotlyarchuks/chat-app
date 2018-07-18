@@ -7,7 +7,7 @@ class AddMessageForm extends Component {
   }
   render() { 
     return ( 
-      <div>Add Message</div>
+      <div className="add-message-form">Add Message</div>
      );
   }
 }

@@ -1,21 +1,27 @@
 :root {
   --main-color: #C5EFF7;
-  --accent-color: rgb(245, 255, 255);
+  --accent-color:rgb(108, 219, 182);
   --text-color: rgb(66, 66, 66);
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
   margin: 0;
   padding: 0;
-  box-sizing: content-box;
-  height: 100%;
 
   font-family: Lato, sans-serif;
   color: var(--text-color);
 }
 
-#root {
+html, body {
   height: 100vh;
+}
+
+#root {
+  height: 100%;
 }
 
 .container {
@@ -58,11 +64,50 @@ body {
   grid-area: n;
   text-align: center;
   background: var(--accent-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-room-form:hover {
+  background: rgb(103, 214, 177)
+}
+
+.button-text {
+  margin-right: 5px;
+  font-size: 17px;
+}
+
+.icon::before {
+  color: rgb(90, 90, 90);
 }
 
 .add-message-form {
   grid-area: f;
-  border: .5px solid lightgrey;
+  display: flex;
+  padding: 0;
+}
+
+.msg-input {
+  width: 90%;
+  height: 100%;
+  padding: 0 15px;
+  font-size: 18px;
+  background: rgb(245, 244, 244);
+  border: none;
+  outline: none;
+  color: var(--text-color);
+}
+
+.msg-button {
+  width: 10%;
+  height: 100%;
+  border: none;
+  background: var(--accent-color);
+}
+
+.msg-button:hover {
+  background: rgb(103, 214, 177)
 }
 
 

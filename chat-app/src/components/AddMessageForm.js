@@ -6,9 +6,12 @@ class AddMessageForm extends Component {
     this.state = {  }
   }
   render() { 
-    return ( 
-      <div className="add-message-form grid__elem">Add Message</div>
-     );
+    return <div className="add-message-form grid__elem">
+        <input className="msg-input" placeholder="Your message" />
+        <button className="msg-button" type="submit">
+          <i className="fab fa-telegram-plane fa-3x icon" />
+        </button>
+      </div>;
   }
 }
  

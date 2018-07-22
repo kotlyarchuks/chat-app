@@ -1,4 +1,4 @@
-###What is it?
+##What is it?
 
 Chat application based on React and @pusher/chatkit
 

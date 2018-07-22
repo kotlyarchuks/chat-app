@@ -8,6 +8,13 @@ import Chatkit from "@pusher/chatkit";
 import { instanceLocator, url, userId } from "./config";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      messages: []
+    };
+  }
+
   componentDidMount() {
     const chatManager = new Chatkit.ChatManager({
       instanceLocator,
@@ -22,7 +29,9 @@ class App extends Component {
         roomId: 12203449,
         hooks: {
           onNewMessage: message => {
-            console.log(`Message: ${message.text}`);
+            this.setState({
+              messages: [...this.state.messages, message]
+            });
           }
         }
       });
@@ -33,7 +42,7 @@ class App extends Component {
     return (
       <div className="container">
         <RoomsList />
-        <MessageList />
+        <MessageList messages={this.state.messages} />
         <AddRoomForm />
         <AddMessageForm />
       </div>

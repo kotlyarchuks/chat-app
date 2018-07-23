@@ -1,11 +1,11 @@
 :root {
-  --main-color: #C5EFF7;
-  --accent-color:rgb(108, 219, 182);
+  --main-color: #c5eff7;
+  --accent-color: rgb(108, 219, 182);
   --text-color: rgb(66, 66, 66);
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -16,7 +16,8 @@ body {
   color: var(--text-color);
 }
 
-html, body {
+html,
+body {
   height: 100vh;
 }
 
@@ -29,13 +30,13 @@ html, body {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 60px;
-  grid-template-areas: 
-  "r m m m m m"
-  "r m m m m m"
-  "r m m m m m"
-  "r m m m m m"
-  "r m m m m m"
-  "n f f f f f";
+  grid-template-areas:
+    "r m m m m m"
+    "r m m m m m"
+    "r m m m m m"
+    "r m m m m m"
+    "r m m m m m"
+    "n f f f f f";
 }
 
 .grid__elem {
@@ -70,7 +71,7 @@ html, body {
 }
 
 .add-room-form:hover {
-  background: rgb(103, 214, 177)
+  background: rgb(103, 214, 177);
 }
 
 .button-text {
@@ -84,8 +85,13 @@ html, body {
 
 .add-message-form {
   grid-area: f;
-  display: flex;
   padding: 0;
+}
+
+.msg-form {
+  display: flex;
+  height: 100%;
+  width: 100%;
 }
 
 .msg-input {
@@ -107,12 +113,11 @@ html, body {
 }
 
 .msg-button:hover {
-  background: rgb(103, 214, 177)
+  background: rgb(103, 214, 177);
 }
 
-
 .msg {
-  border: .5px solid var(--main-color);
+  border: 0.5px solid var(--main-color);
   border-radius: 5px;
   padding: 15px;
   margin-bottom: 10px;

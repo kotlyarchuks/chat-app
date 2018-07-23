@@ -13,6 +13,8 @@ class App extends Component {
     this.state = {
       messages: []
     };
+
+    this.sendMessage = this.sendMessage.bind(this);
   }
 
   componentDidMount() {
@@ -25,7 +27,8 @@ class App extends Component {
     });
 
     chatManager.connect().then(currentUser => {
-      currentUser.subscribeToRoom({
+      this.currentUser = currentUser;
+      this.currentUser.subscribeToRoom({
         roomId: 12203449,
         hooks: {
           onNewMessage: message => {
@@ -38,13 +41,20 @@ class App extends Component {
     });
   }
 
+  sendMessage(text) {
+    this.currentUser.sendMessage({
+      text,
+      roomId: 12203449
+    });
+  }
+
   render() {
     return (
       <div className="container">
         <RoomsList />
         <MessageList messages={this.state.messages} />
         <AddRoomForm />
-        <AddMessageForm />
+        <AddMessageForm sendMessage={this.sendMessage} />
       </div>
     );
   }

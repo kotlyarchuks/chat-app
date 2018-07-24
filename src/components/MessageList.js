@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactDOM from 'react-dom';
 import Message from "./Message";
 
 class MessageList extends Component {
@@ -6,6 +7,12 @@ class MessageList extends Component {
     super(props);
     this.state = {};
   }
+
+  componentDidUpdate(){
+    let node = ReactDOM.findDOMNode(this);
+    node.scrollTop = node.scrollHeight
+  }
+
   render() {
     return (
       <div className="message-list grid__elem">

@@ -13,7 +13,8 @@ class App extends Component {
     this.state = {
       messages: [],
       joinableRooms: [],
-      joinedRooms: []
+      joinedRooms: [],
+      roomId: null
     };
 
     this.sendMessage = this.sendMessage.bind(this);
@@ -35,21 +36,34 @@ class App extends Component {
       });
   }
 
-  subscribeToRoom(room){
+  subscribeToRoom(room) {
     this.setState({
       messages: []
-    })
-    this.currentUser.subscribeToRoom({
-      roomId: room,
-      hooks: {
-        onNewMessage: message => {
-          this.setState({
-            messages: [...this.state.messages, message]
-          });
-        }
-      }
     });
-    this.getRooms()
+    this.currentUser
+      .subscribeToRoom({
+        roomId: room,
+        hooks: {
+          onNewMessage: message => {
+            this.setState({
+              messages: [...this.state.messages, message]
+            });
+          }
+        }
+      })
+      .then(room => {
+        this.setState({
+          roomId: room.id
+        });
+        this.getRooms();
+      });
+  }
+
+  sendMessage(text) {
+    this.currentUser.sendMessage({
+      text,
+      roomId: this.state.roomId
+    });
   }
 
   componentDidMount() {
@@ -66,18 +80,10 @@ class App extends Component {
       .then(currentUser => {
         this.currentUser = currentUser;
         this.getRooms();
-        
       })
       .catch(err => {
         console.log("Connection error:", err);
       });
-  }
-
-  sendMessage(text) {
-    this.currentUser.sendMessage({
-      text,
-      roomId: 12203449
-    });
   }
 
   render() {

@@ -90,6 +90,7 @@ class App extends Component {
     return (
       <div className="container">
         <RoomsList
+          roomId={this.state.roomId}
           rooms={[...this.state.joinableRooms, ...this.state.joinedRooms]}
           subscribeToRoom={this.subscribeToRoom}
         />

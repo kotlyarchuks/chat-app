@@ -55,6 +55,10 @@ body {
   background: var(--main-color);
 }
 
+.active-room {
+  font-weight: bold;
+}
+
 .rooms-list ul {
   list-style: none;
 }

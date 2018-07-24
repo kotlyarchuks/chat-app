@@ -7,7 +7,12 @@ class AddRoomForm extends Component {
   }
   render() {
     return <div className="add-room-form grid__elem">
-        <span className="button-text">Add Room</span><i className="fas fa-plus icon" />
+        <form className="room-form">
+          <input className="room-input" placeholder="New Room" />
+          <button className="room-button" type="submit">
+            <i className="fas fa-plus fa-2x icon" />
+          </button>
+        </form>
       </div>;
   }
 }

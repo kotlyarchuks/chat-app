@@ -87,11 +87,31 @@ body {
 
 .add-room-form {
   grid-area: n;
-  text-align: center;
-  background: var(--accent-color);
+  padding: 0;
+}
+
+.room-form {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.room-input {
+  width: 85%;
+  height: 100%;
+  padding: 0 15px;
+  font-size: 18px;
+  background: rgb(245, 244, 244);
+  border: none;
+  outline: none;
+  color: var(--text-color);
+}
+
+.room-button {
+  width: 15%;
+  height: 100%;
+  border: none;
+  background: var(--accent-color);
 }
 
 .add-room-form:hover {
@@ -152,9 +172,4 @@ body {
   font-size: 17px;
   font-weight: bold;
   margin-bottom: 3px;
-  /* color: rgb(66, 66, 66); */
-}
-
-.msg-content {
-  /* color: rgb(66, 66, 66); */
 }

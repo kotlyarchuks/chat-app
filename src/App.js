@@ -20,6 +20,7 @@ class App extends Component {
     this.sendMessage = this.sendMessage.bind(this);
     this.getRooms = this.getRooms.bind(this);
     this.subscribeToRoom = this.subscribeToRoom.bind(this);
+    this.createRoom = this.createRoom.bind(this);
   }
 
   getRooms() {
@@ -66,6 +67,18 @@ class App extends Component {
     });
   }
 
+  createRoom(name){
+    this.currentUser.createRoom({
+      name
+    })
+    .then(room => {
+      this.subscribeToRoom(room.id)
+    })
+    .catch(err => {
+      console.log("createRoom error:", err)
+    })
+  }
+
   componentDidMount() {
     const chatManager = new Chatkit.ChatManager({
       instanceLocator,
@@ -95,7 +108,7 @@ class App extends Component {
           subscribeToRoom={this.subscribeToRoom}
         />
         <MessageList messages={this.state.messages} />
-        <AddRoomForm />
+        <AddRoomForm createRoom={this.createRoom} />
         <AddMessageForm sendMessage={this.sendMessage} />
       </div>
     );

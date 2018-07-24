@@ -55,10 +55,25 @@ body {
   background: var(--main-color);
 }
 
+.rooms-list ul {
+  list-style: none;
+}
+
+.rooms-list ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.rooms-list ul li:hover{
+  cursor: pointer;
+  color: rgb(41, 41, 41);
+}
+
 .message-list {
   grid-area: m;
   display: flex;
   flex-direction: column;
+  overflow: auto;
 }
 
 .add-room-form {

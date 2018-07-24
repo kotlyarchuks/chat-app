@@ -10,7 +10,9 @@ class RoomsList extends Component {
     <div className="title">Rooms list</div>
       <ul>
         {this.props.rooms.map(room => {
-          return <li key={room.id}>#{room.name}</li>
+          return <li key={room.id}>
+            <a onClick={() => this.props.subscribeToRoom(room.id)} href="#">#{room.name}</a>
+          </li>
         })}
       </ul>
     </div>;
